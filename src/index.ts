@@ -90,7 +90,12 @@ client.on("interactionCreate", async (interaction) => {
       // console.log("answered correctly");
 
       await original_message?.editReply({
-        content: "Correct! Use /trivia again to answer another question.",
+        content:
+          ":white_check_mark: Correct! :white_check_mark: \n Question: " +
+          entry?.question +
+          " \n You answered: **" +
+          input_guess +
+          "\n \n ** Use /trivia again to answer another question!",
         components: [],
       });
 
@@ -107,9 +112,9 @@ client.on("interactionCreate", async (interaction) => {
       );
       await original_message?.editReply({
         content:
-          "Incorrect! \n Your previous answer was: " +
+          ":x: Incorrect! :x: \n Your previous answer was: **" +
           input_guess +
-          "\n Try again: " +
+          "\n \n ** Try again: " +
           entry?.question,
         components: [row],
       });

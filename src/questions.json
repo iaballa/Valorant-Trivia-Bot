@@ -96,6 +96,16 @@
 
   {
     "question": "True or False: The agent KAY/O is considered a Radiant",
+    "answer": "false"
+  },
+
+  {
+    "question": "True or False: The agent Raze was released during the VALORANT beta",
+    "answer": "true"
+  },
+
+  {
+    "question": "True or False: The Frenzy is a pistol available for purchase during the buy phase",
     "answer": "true"
   }
 
