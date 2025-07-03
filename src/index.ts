@@ -47,15 +47,11 @@ client.on("interactionCreate", async (interaction) => {
     const { commandName } = interaction;
 
     if (commands[commandName as keyof typeof commands]) {
-      console.log("executing " + commandName);
+      // console.log("executing " + commandName);
       commands[commandName as keyof typeof commands].execute(interaction);
     }
   }
-  // console.log("interaction create");
-  // // Set current User ID, Current Question, and Correct Answer
-  // const user_id = interaction.user.id;
-  // const current_question = user_questions.get(interaction.user.id)?.question;
-  // const correct_answer = user_questions.get(user_id)?.answer;
+
   if (interaction.isButton() && interaction.customId === "triv_button") {
     const entry = entry_map.get(interaction.user.id);
 
@@ -77,33 +73,8 @@ client.on("interactionCreate", async (interaction) => {
 
     await interaction.showModal(modal);
   }
-  // // Handling Guess Button Press
-  // if (interaction.isButton() && interaction.customId === "triv_button") {
-  //     console.log("Initial Guess Button Pressed");
-  //     console.log("Handled Button Press, Question Asked: ", current_question);
 
-  //     // Create Modal for Submission
-  //     const modal = new ModalBuilder()
-  //       .setCustomId("triv_modal")
-  //       .setTitle("Submit Your Guess!")
-
-  //     // Create Textbox to add to Modal
-  //     const guess_textbox = new TextInputBuilder()
-  //       .setCustomId("guess_input")
-  //       .setLabel(""+ current_question)
-  //       .setStyle(TextInputStyle.Short)
-
-  //     // Add guess_textbox to Modal
-  //     const guess =
-  //       new ActionRowBuilder<ModalActionRowComponentBuilder>().addComponents(
-  //         guess_textbox
-  //       );
-  //     modal.addComponents(guess);
-
-  //     await interaction.showModal(modal);
-  //   }
-
-  // // Handling Modal Submission
+  // Handling Modal Submission
   if (interaction.isModalSubmit() && interaction.customId === "triv_modal") {
     const input_guess = interaction.fields.getTextInputValue("guess_input");
     const entry = entry_map.get(interaction.user.id);
@@ -112,11 +83,11 @@ client.on("interactionCreate", async (interaction) => {
     // Close Modal Immediately after Submission
     await interaction.deferReply({ flags: MessageFlags.Ephemeral });
 
-    console.log("anwswer: " + entry?.answer);
-    console.log("guess: " + input_guess);
+    // console.log("anwswer: " + entry?.answer);
+    // console.log("guess: " + input_guess);
 
     if (normalize(input_guess) === normalize(entry?.answer as string)) {
-      console.log("answered correctly");
+      // console.log("answered correctly");
 
       await original_message?.editReply({
         content: "Correct! Use /trivia again to answer another question.",
@@ -125,7 +96,7 @@ client.on("interactionCreate", async (interaction) => {
 
       interaction.deleteReply();
     } else {
-      console.log("incorrect answer: ", input_guess);
+      // console.log("incorrect answer: ", input_guess);
       const retry_button = new ButtonBuilder()
         .setCustomId("triv_button")
         .setLabel("Click here to Guess Again!")
@@ -135,7 +106,11 @@ client.on("interactionCreate", async (interaction) => {
         retry_button
       );
       await original_message?.editReply({
-        content: "Incorrect! \n Try again: " + entry?.question,
+        content:
+          "Incorrect! \n Your previous answer was: " +
+          input_guess +
+          "\n Try again: " +
+          entry?.question,
         components: [row],
       });
 
@@ -143,8 +118,3 @@ client.on("interactionCreate", async (interaction) => {
     }
   }
 });
-
-// client.login(config.DISCORD_TOKEN);
-// function setStyle(Short: TextInputStyle) {
-//   throw new Error("Function not implemented.");
-// };

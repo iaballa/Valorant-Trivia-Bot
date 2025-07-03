@@ -1,37 +1,103 @@
 [
   {
     "question": "What company developed and published Valorant?",
-    "answer": "Riot Games"
+    "answer": "riot games"
   },
   {
     "question": "On which date was Valorant officially released for Windows?",
-    "answer": "June 2, 2020"
+    "answer": "june 2, 2020"
   },
   {
     "question": "What game engine powers Valorant?",
-    "answer": "Unreal Engine 4"
+    "answer": "unreal engine 4"
   },
   {
     "question": "What country is the agent Astra from?",
-    "answer": "Ghana"
+    "answer": "ghana"
   },
   {
     "question": "What is the in-game currency called that can be earned by playing games and completing tasks in Valorant?",
-    "answer": "Kingdom Credits"
+    "answer": "kingdom credits"
   },
 
   {
     "question": "Which agent can create a poison cloud?",
-    "answer": "Viper"
+    "answer": "viper"
   },
 
   {
     "question": "Which agent has a recon bolt?",
-    "answer": "Sova"
+    "answer": "sova"
   },
 
   {
-    "question": "Which country is Neon from?",
-    "answer": "Philippines"
+    "question": "Which country is the agent Neon from?",
+    "answer": "philippines"
+  },
+
+  {
+    "question": "What are the characters called in Valorant?",
+    "answer": "agents" 
+  },
+  {
+    "question": "What role type is Sage? Duelist, Controller, Sentinel, or Initiator?",
+    "answer": "sentinel" 
+  },
+  {
+    "question": "What country is the map Ascent based on?",
+    "answer": "italy" 
+  },
+  {
+    "question": "What country is the map Icebox based on?",
+    "answer": "russia" 
+  },
+  {
+    "question": "What location is the map Breeze based on?",
+    "answer": "bermuda triangle" 
+  },
+  {
+    "question": "What location is the map Fracture based on? Hint: It's a US state.",
+    "answer": "new mexico" 
+  },
+  {
+    "question": "What country is the map Lotus based on?",
+    "answer": "india" 
+  },
+  {
+    "question": "What country is the map Split based on?",
+    "answer": "japan" 
+  },
+  {
+    "question": "Which country is the agent Waylay from?",
+    "answer": "thailand"
+  },
+  {
+    "question": "Which agent is from South Korea?",
+    "answer": "jett"
+  },
+  {
+    "question":"Which agent has the voiceline 'Nightmare take them!' when they use their ultimate ability?",
+    "answer": "fade"
+  },
+  {
+    "question": "Which agent uses a sentry turret?",
+    "answer": "killjoy"
+  },
+
+  {
+    "question": "Which agent was an information broker prior to joining the VALORANT team?",
+    "answer": "cypher"
+  },
+
+  {
+    "question": "True or False: The agent Reyna is considered a Radiant",
+    "answer": "true"
+  },
+
+  {
+    "question": "True or False: The agent KAY/O is considered a Radiant",
+    "answer": "true"
   }
+
+
 ]

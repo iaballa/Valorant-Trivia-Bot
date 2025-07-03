@@ -26,13 +26,14 @@ export const data = new SlashCommandBuilder()
 
 // execution of trivia command
 export async function execute(interaction: CommandInteraction) {
-  console.log("executed");
+  // console.log("executed");
   // randomly choose a question from questions.json file
   const randomIndex = Math.floor(Math.random() * entries.length);
+  console.log("length of entries: ", entries.length);
   const entry = entries[randomIndex];
 
   // assign question to user
-  console.log("setting user to " + interaction.user.id);
+  // console.log("setting user to " + interaction.user.id);
   entry_map.set(interaction.user.id, entry);
   // const current_question = user_questions.get(interaction.user.id)?.question;
 
@@ -44,7 +45,7 @@ export async function execute(interaction: CommandInteraction) {
 
   const row = new ActionRowBuilder<ButtonBuilder>().addComponents(button);
 
-  console.log("Question Asked: ", entry.question);
+  // console.log("Question Asked: ", entry.question);
 
   user_interactions.set(interaction.user.id, interaction);
 
