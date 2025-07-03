@@ -23,3 +23,7 @@ export async function deployCommands({ guildId }: DeployCommandsProps) {
     console.error(error);
   }
 }
+
+export function normalize(input: string) {
+  return input.trim().replace(/\s+/g, " ").toLowerCase();
+}
