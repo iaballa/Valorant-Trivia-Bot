@@ -1,4 +1,4 @@
-# trivbot3
+# Discord Valorant Trivia Bot
 
 A simple Discord Trivia Bot that asks Valorant related questions!
 
